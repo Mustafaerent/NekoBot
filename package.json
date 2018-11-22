@@ -1,0 +1,19 @@
+{
+  "name": "discordbotdersleri",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "author": "Mustafa Eren Tuzcuoğlu",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "chance": "^1.0.16",
+    "discord.js": "^11.4.2",
+    "fs": "0.0.1-security",
+    "moment": "^2.22.2",
+    "string-similarity": "^2.0.0"
+  }
+}
