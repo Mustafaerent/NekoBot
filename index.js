@@ -1,4 +1,4 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const chalk = require('chalk');
@@ -15,71 +15,6 @@ client.on('ready', () => {
 );
 
 //bot.on('', '' => {});
-
-client.on('guildMemberAdd', member => {
-  console.log(member.user.username + 'Kişisi Servera Katıldı.')
-  var role = member.guild.roles.find('name', 'Kayıt');
-  if(!role) return;
-  member.addRole(role)
-});
-
-client.on('message',msg => {
-  if(msg.content === 'sa'){
-    msg.reply("as");
-  }
-});
-
-client.on('message',msg => {
-  if(msg.content === 'Sa'){
-    msg.reply("as");
-  }
-});
-
-client.on('message',msg => {
-  if(msg.content === 'SA'){
-    msg.reply("as");
-  }
-});
-
-client.on('message',msg => {
-  if(msg.content === 'Selam'){
-    msg.reply("Meow!!");
-  }
-});
-
-client.on('message',msg => {
-  if(msg.content === 'selam'){
-    msg.reply("Meow!!");
-  }
-});
-
-client.on('message',msg => {
-  if(msg.content === 'SELAM'){
-    msg.reply("Meow!!");
-  }
-});
-
-let prefix = '!'
-
-client.on('message',msg => {
-  if(msg.content.startsWith(prefix + 'setstatus')) {
-    bot.user.setStatus('online')
-  }
-});
-
-client.on('guildBanAdd', (guild, user) => {
-  console.log(user.username + guild.name + 'servarından Banlandı.');
-  let modLog = guild.channels.find('name', 'mod-log');
-  if(!modLog) return; message.channel.send ('Lütfen mod-log Kanalı Kurun.')
-  modLog.send(' `Bir Kullanıcı Admin Tarafından Banlandı` @here ')
-});
-
-client.on('guildBanRemove', (guild, user) => {
-  console.log(user.username + guild.name + 'servarındaki Banı Kaldırıldı.');
-  let modLog = guild.channels.find('name', 'mod-log');
-  if(!modLog) return; message.channel.send ('Lütfen mod-log Kanalı Kurun.')
-  modLog.send(' `Banlanmış Bir Kullanıcının Banı Admin Tarafından Kaldırıldı` @here ')
-});
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -166,28 +101,5 @@ client.on('warn', e => {
 client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
-
-client.on('message',message => {
-    if (message.content.startsWith("!ban")) {
-      let member= message.mentions.members.first();
-      member.ban().then((member) => {
-          message.channel.send(":wave: " + member.displayName + " Kişisi " + message.author + " Tarafından Başarıyla Banlandı. :point_right: ");
-      }).catch(() => {
-          message.channel.send("Banlama Başarısız (Yetki Ver Bana)");
-      });
-    }
-});
-
-client.on('message',message => {
-  if (message.content.startsWith("!kick")) {
-    let member= message.mentions.members.first();
-    member.kick().then((member) => {
-        message.channel.send(":wave: " + member.displayName + " Kişisi " + message.author + " Tarafından Tekmelendi. :point_right: ");
-    }).catch(() => {
-        message.channel.send("Tekmeleme Başarısız (Yetki Ver Bana)");
-      });
-    }
-});
-
   
-client.login('NTEyOTk5MzkxODk3MDU5MzUw.DtLKwQ.6pEEQhdUgHsB_ixq5ovkkNaHuZA');
+client.login('NTM4MTE4NTk0NDM3OTcyMDAx.DyvJgg.OautormjgfuCi3GuzEp_aiBaHfY');
